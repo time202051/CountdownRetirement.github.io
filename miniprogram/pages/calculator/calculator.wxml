@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="card">
+    <view class="subtitle">退休规划计算器</view>
+    
+    <!-- 财务规划 -->
+    <view style="margin-bottom: 40rpx;">
+      <view class="form-label">月收入</view>
+      <input class="input" type="number" placeholder="请输入月收入" value="{{plan.monthlyIncome}}" bindinput="onMonthlyIncomeInput" />
+      
+      <view class="form-label">目标储蓄</view>
+      <input class="input" type="number" placeholder="请输入目标储蓄金额" value="{{plan.targetSavings}}" bindinput="onTargetSavingsInput" />
+      
+      <view class="form-label">当前储蓄</view>
+      <input class="input" type="number" placeholder="请输入当前储蓄金额" value="{{plan.currentSavings}}" bindinput="onCurrentSavingsInput" />
+      
+      <view class="card" style="background: #f0f9ff; margin-top: 20rpx;">
+        <view class="form-label">建议月储蓄</view>
+        <view style="font-size: 32rpx; font-weight: bold; color: #0ea5e9;">¥{{monthlySaving}}</view>
+        <view class="text">储蓄率: {{savingRate}}%</view>
+      </view>
+    </view>
+
+    <!-- 兴趣爱好 -->
+    <view style="margin-bottom: 40rpx;">
+      <view class="form-label">兴趣爱好</view>
+      <view class="tags">
+        <view class="tag" wx:for="{{plan.hobbies}}" wx:key="index">
+          {{item}}
+          <text class="tag-remove" bindtap="removeHobby" data-hobby="{{item}}">删除</text>
+        </view>
+      </view>
+      <view style="display: flex; gap: 10rpx; margin-top: 10rpx;">
+        <input class="input" style="flex: 1;" placeholder="添加兴趣爱好" value="{{newHobby}}" bindinput="onNewHobbyInput" />
+        <button class="btn" style="padding: 20rpx;" bindtap="addHobby">添加</button>
+      </view>
+    </view>
+
+    <!-- 旅行计划 -->
+    <view style="margin-bottom: 40rpx;">
+      <view class="form-label">旅行计划</view>
+      <view class="tags">
+        <view class="tag" wx:for="{{plan.travelPlans}}" wx:key="index">
+          ✈️ {{item}}
+          <text class="tag-remove" bindtap="removeTravelPlan" data-travel="{{item}}">删除</text>
+        </view>
+      </view>
+      <view style="display: flex; gap: 10rpx; margin-top: 10rpx;">
+        <input class="input" style="flex: 1;" placeholder="添加旅行目的地" value="{{newTravel}}" bindinput="onNewTravelInput" />
+        <button class="btn" style="padding: 20rpx;" bindtap="addTravelPlan">添加</button>
+      </view>
+    </view>
+
+    <button class="btn" bindtap="savePlan">保存规划</button>
+  </view>
+</view>

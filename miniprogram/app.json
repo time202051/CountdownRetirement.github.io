@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/settings/settings",
+    "pages/calculator/calculator"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0ea5e9",
+    "navigationBarTitleText": "退休倒计时",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f0f9ff"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#0ea5e9",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "倒计时",
+        "iconPath": "images/timer.png",
+        "selectedIconPath": "images/timer-active.png"
+      },
+      {
+        "pagePath": "pages/calculator/calculator",
+        "text": "计算器",
+        "iconPath": "images/calculator.png",
+        "selectedIconPath": "images/calculator-active.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "images/settings.png",
+        "selectedIconPath": "images/settings-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

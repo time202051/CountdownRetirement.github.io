@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="card">
+    <view class="subtitle">个人设置</view>
+    
+    <view class="form-group">
+      <view class="form-label">姓名（可选）</view>
+      <input class="input" placeholder="请输入您的姓名" value="{{formData.name}}" bindinput="onNameInput" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">当前年龄</view>
+      <input class="input" type="number" placeholder="请输入当前年龄" value="{{formData.currentAge}}" bindinput="onCurrentAgeInput" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">计划退休年龄</view>
+      <input class="input" type="number" placeholder="请输入退休年龄" value="{{formData.retirementAge}}" bindinput="onRetirementAgeInput" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">职业（可选）</view>
+      <input class="input" placeholder="请输入您的职业" value="{{formData.occupation}}" bindinput="onOccupationInput" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">出生日期（可选）</view>
+      <input class="input" type="date" value="{{formData.birthDate}}" bindinput="onBirthDateInput" />
+    </view>
+
+    <view style="margin-top: 40rpx;">
+      <button class="btn" bindtap="saveSettings">保存设置</button>
+      <button class="btn btn-secondary" bindtap="resetSettings">重置</button>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{userInfo}}">
+    <view class="subtitle">当前设置</view>
+    <view class="text">姓名: {{userInfo.name || '未设置'}}</view>
+    <view class="text">当前年龄: {{userInfo.currentAge}}岁</view>
+    <view class="text">退休年龄: {{userInfo.retirementAge}}岁</view>
+    <view class="text">职业: {{userInfo.occupation || '未设置'}}</view>
+    <view class="text">出生日期: {{userInfo.birthDate || '未设置'}}</view>
+  </view>
+</view>
